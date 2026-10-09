@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sheetkit"
+version = "0.1.0"
+description = "Python toolkit for cleaning, merging and reporting on Excel and Google Sheets data"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Tyrel Orrin" }]
+keywords = ["excel", "google-sheets", "pandas", "openpyxl", "automation", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Spreadsheet",
+]
+dependencies = [
+    "pandas>=2.1",
+    "openpyxl>=3.1",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+gsheets = ["gspread>=6.0", "google-auth>=2.20"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+sheetkit = "sheetkit.cli:app"
+
+[project.urls]
+Repository = "https://github.com/OrrinJames/sheets-automation-toolkit"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sheetkit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["B008"]  # Typer uses function calls in argument defaults by design
