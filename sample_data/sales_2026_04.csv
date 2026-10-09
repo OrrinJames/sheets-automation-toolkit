@@ -1,0 +1,6 @@
+order id,order date,customer,region,product,amount (nzd)
+A-1006,25/03/2026,Mount Bikes,Bay of Plenty,Bike Service Kit,$212.00
+A-1007,01/04/2026,Harbour Bakery,Wellington,Flour 25kg,$389.50
+A-1008,08/04/2026,Southern Joinery,Christchurch,Timber Pack,"$1,980.00"
+A-1009,14/04/2026,Tui Plumbing,Auckland,Pipe Fittings,($45.00)
+A-1010,22/04/2026,Mount Bikes,Bay of Plenty,Tyres x2,$158.00
