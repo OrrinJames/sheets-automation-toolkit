@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Output from the README examples
+out/
+
+# Google credentials - never commit these
+*service-account*.json
+*credentials*.json
+client_secret*.json
+.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+~$*.xlsx
